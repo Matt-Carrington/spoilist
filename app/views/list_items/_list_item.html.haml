@@ -4,8 +4,16 @@
   .list_item
     -if list_item.completed?
       %strike{ style: "opacity: 0.4;" }= list_item.content
+      %p
+        Completed
+        = time_ago_in_words(list_item.completed_at)
+        ago
     -else
       = list_item.content
+      %p
+        Created
+        = time_ago_in_words(list_item.created_at)
+        ago
   .trash
     = link_to "Delete", list_list_item_path(@list, list_item.id), method: :delete, data: { confirm: "Delete?" }
   .color_bar

@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
   
-  get 'list_items/create'
+  # get 'list_items/create'
 
-  get 'list_items/destroy'
+  # get 'list_items/destroy'
 
-  get 'list_items/complete'
+  # get 'list_items/complete'
 
-  get 'welcome/index'
+  # get 'welcome/index'
 
   root 'welcome#index'
 

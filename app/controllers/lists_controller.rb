@@ -42,6 +42,10 @@ class ListsController < ApplicationController
     redirect_to lists_path
   end
 
+  def count
+    
+  end
+
   private
 
   def find_list

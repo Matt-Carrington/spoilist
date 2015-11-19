@@ -1,2 +1,13 @@
-%p
-  = list_item.content
+.row.clearfix
+  .complete
+    = link_to "Complete it!", complete_list_list_item_path(@list, list_item.id), method: :patch
+  .list_item
+    -if list_item.completed?
+      %strike{ style: "opacity: 0.4;" }= list_item.content
+    -else
+      = list_item.content
+  .trash
+    = link_to "Delete", list_list_item_path(@list, list_item.id), method: :delete, data: { confirm: "Delete?" }
+  .color_bar
+    = @list.color
+

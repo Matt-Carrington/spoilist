@@ -11,7 +11,11 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :lists do
-    resources :list_items
+    resources :list_items do
+      member do
+        patch :complete
+      end
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

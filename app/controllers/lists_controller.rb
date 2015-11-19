@@ -2,6 +2,7 @@ class ListsController < ApplicationController
   before_action :find_list, only: [:show, :edit, :update, :destroy]
 
   def index
+    @lists = List.all.order("created_at DESC")
   end
 
   def show

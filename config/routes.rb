@@ -1,10 +1,18 @@
 Rails.application.routes.draw do
   
+  get 'list_items/create'
+
+  get 'list_items/destroy'
+
+  get 'list_items/complete'
+
   get 'welcome/index'
 
   root 'welcome#index'
 
-  resources :lists
+  resources :lists do
+    resources :list_items
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

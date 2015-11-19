@@ -1,4 +1,8 @@
 %h1= @list.title
 %p= @list.color
 
+= render @list.list_items
+
+= render 'list_items/form'
+
 =link_to "All Lists", lists_path

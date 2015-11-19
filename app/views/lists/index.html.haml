@@ -1,3 +1,5 @@
 - @lists.each do |list|
   %h2= link_to list.title, list
   %p= time_ago_in_words(list.created_at)
+
+= link_to "New List", new_list_path

@@ -14,7 +14,7 @@
   private
 
   def set_list
-    @list = List.find(params[:todo_list_id])
+    @list = List.find(params[:list_id])
   end
 
   def list_item_params

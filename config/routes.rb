@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  devise_for :users
+  
   # get 'list_items/create'
 
   # get 'list_items/destroy'
@@ -16,6 +18,11 @@ Rails.application.routes.draw do
         patch :complete
       end
     end
+
+    # authenticated :user do
+    #   root "lists#index", as: "authenticated_root"
+    # end
+
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,6 +1,6 @@
 - @lists.each do |list|
   %h2= link_to list.title, list
-  = @lists.length
+  = list.list_items.count
   = link_to 'Delete', list, method: :delete, data: { confirm: "Are you sure?" }
 %br/
 = link_to "New List", new_list_path

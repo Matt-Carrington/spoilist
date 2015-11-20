@@ -4,14 +4,101 @@
 
 @import 'normalize';
 
-.editable_field {
-  margin: 0;
-  padding: 0;
-	line-height: 50px;
-	height: 50px;
-	-webkit-appearance: none;
-	background-color: #666666;
-	color: white;
-	outline: 0;
-	border: 0;
+
+$dark_gray: #3D3D44;
+$light_gray: #C0C1C1;
+$mid_gray: #4E4E56;
+$green: #33CD99;
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: $dark_gray;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+h1 {
+  font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
+  color: $light_gray;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.wrapper_with_padding {
+  width: 80%;
+  margin: 0 auto;
+  padding: 3.5rem 0;
+}
+
+.row {
+  border-bottom: 1px solid $mid_gray;
+  .list {
+    text-align: center;
+    width: 100%;
+    border-right: 10px solid #DE99FF;
+
+  }
+  .title {
+
+  }
+  .item {
+
+  }
+  
+}
+
+button, .button {
+  border: none;
+  outline: none;
+  background: $green;
+  padding: 1rem 3.5rem;
+  border-radius: 2rem;
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+a {
+  color: $green;
+  text-decoration: none;
+  &:hover {
+    color: $dark_gray;
+  }
+}
+
+.button {
+  color: white;
+  margin: 2rem 0;
+}
+
+input[type="text"], input[type="email"], input[type="password"], textarea {
+  width: 100%;
+  margin-bottom: 1rem;
+  border: 1px solid $light_gray;
+  border-radius: .4rem;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+  height: 40px;
+}
+
+textarea {
+  min-height: 200px;
 }

@@ -1,6 +1,9 @@
+
 %p= notice
-%h1= @list.title
-= link_to "Edit", edit_list_path(@list)
+.row
+  .list
+    %h1= @list.title
+    = link_to "Edit", edit_list_path(@list)
 
 
 = render @list.list_items

@@ -8,9 +8,7 @@ Rails.application.routes.draw do
 
   # get 'list_items/complete'
 
-  # get 'welcome/index'
-
-  root 'welcome#index'
+  get 'welcome/index'
 
   resources :lists do
     resources :list_items do
@@ -18,12 +16,13 @@ Rails.application.routes.draw do
         patch :complete
       end
     end
-
-    # authenticated :user do
-    #   root "lists#index", as: "authenticated_root"
-    # end
-
   end
+
+  authenticated :user do
+    root "lists#index", as: "authenticated_root"
+  end
+
+  root 'welcome#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,6 +1,11 @@
 - @lists.each do |list|
-  %h2= link_to list.title, list
-  = list.list_items.count
-  = link_to 'Delete', list, method: :delete, data: { confirm: "Are you sure?" }
+  = link_to list do
+    .row
+      .list
+        .item-count
+          = list.list_items.count
+          / = link_to 'Delete', list, method: :delete, data: { confirm: "Are you sure?" }
+        .list-name
+          = list.title
 %br/
 = link_to "New List", new_list_path

@@ -9,6 +9,7 @@ $dark_gray: #3D3D44;
 $light_gray: #C0C1C1;
 $mid_gray: #4E4E56;
 $green: #33CD99;
+$purple: #DE99FF;
 
 * {
   box-sizing: border-box;
@@ -17,6 +18,7 @@ $green: #33CD99;
 
 body {
   background-color: $dark_gray;
+  color: #ffffff;
   font-family: "Roboto", "Helvetica Neue", Helvetica, sans-serif;
 }
 
@@ -29,8 +31,9 @@ body {
   clear: both;
 }
 
-h1 {
+h1, h2, h3, h4 {
   font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 400;
   color: $light_gray;
 }
 
@@ -46,29 +49,82 @@ h1 {
   padding: 3.5rem 0;
 }
 
+.welcome {
+  text-align: center;
+  max-width: 600px;
+  padding: 0 10px;
+}
+
 .row {
   border-bottom: 1px solid $mid_gray;
   .list {
-    text-align: center;
-    width: 100%;
-    border-right: 10px solid #DE99FF;
-
+    border-right: 10px solid $purple;
+    .list-name {
+      padding: 30px 10px 30px 10px;
+      font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
+      font-weight: 400;
+      font-size: 25px;
+      color: $purple;
+      &:hover {
+        color: $light_gray;
+      }
+    }
+    .item-count {
+      float: right;
+      padding: 30px 10px 30px 10px;
+    }
+    .trash {
+      padding: 30px 10px 30px 10px;
+      float: right;
+    }
   }
   .title {
-
+    border-right: 10px solid $purple;
+    .back {
+      float: left;
+      padding: 30px 10px 30px 10px;
+    }
+    .list-name {
+      margin: 0 auto;
+      padding: 30px 10px 30px 10px;
+      font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
+      text-align: center;
+      font-weight: 400;
+      font-size: 25px;
+      color: $purple;
+    }
+    .trash {
+      padding: 30px 10px 30px 10px;
+      float: right;
+    }
   }
   .item {
-
-  }
-  
+    border-right: 10px solid $purple;
+    .complete {
+      float: left;
+      padding: 30px 10px 30px 10px;
+    }
+    .list-item {
+      margin: 0 auto;
+      padding: 30px 10px 30px 10px;
+    }
+    .trash {
+      padding: 30px 10px 30px 10px;
+      float: right;
+    }
+    .time {
+      color: $light_gray;
+      font-size: 14px;
+    }
+  } 
 }
 
 button, .button {
   border: none;
   outline: none;
-  background: $green;
+  background: $purple;
   padding: 1rem 3.5rem;
-  border-radius: 2rem;
+  text-align: center;
   a {
     color: white;
     text-decoration: none;
@@ -76,10 +132,10 @@ button, .button {
 }
 
 a {
-  color: $green;
+  color: $purple;
   text-decoration: none;
   &:hover {
-    color: $dark_gray;
+    color: $light_gray;
   }
 }
 
@@ -88,15 +144,41 @@ a {
   margin: 2rem 0;
 }
 
+.form-inputs {
+
+}
+
 input[type="text"], input[type="email"], input[type="password"], textarea {
-  width: 100%;
-  margin-bottom: 1rem;
-  border: 1px solid $light_gray;
-  border-radius: .4rem;
+  background: $mid_gray;
+  text-decoration: none;
+  border: none;
 }
 
 input[type="text"], input[type="email"], input[type="password"] {
   height: 40px;
+  width: 100%;
+}
+
+input[type="text"] {
+  background: $mid_gray;
+  text-decoration: none;
+  border: none;
+}
+
+input[type="button"] {
+  text-decoration: none;
+  border: none;
+  width: 100%;
+}
+
+input[type="submit"] {
+  border: none;
+  outline: none;
+  background: $purple;
+  padding: 1rem 3.5rem;
+  text-align: center;
+  width: 100%;
+  color: $dark_gray;
 }
 
 textarea {

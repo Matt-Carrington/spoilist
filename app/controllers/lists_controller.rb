@@ -37,9 +37,17 @@ class ListsController < ApplicationController
     end
   end
 
+  # def destroy
+  #   @list.destroy
+  #   redirect_to lists_path
+  # end
+
   def destroy
     @list.destroy
-    redirect_to lists_path
+    respond_to do |format|
+      format.html { redirect_to root_url, notice: 'Todo list was successfully destroyed.' }
+      format.json { head :no_content }
+    end
   end
 
   def count

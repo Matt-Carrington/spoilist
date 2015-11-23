@@ -1,13 +1,15 @@
-
-%p= notice
 .row
-  .list
-    %h1= @list.title
-    = link_to "Edit", edit_list_path(@list)
-
+  .title
+    .back
+      = link_to "All Lists", lists_path
+    .trash
+      = link_to 'Delete', @list, method: :delete, data: { confirm: "Are you sure?" }
+    .list-name
+      = @list.title
+      / = link_to "Edit", edit_list_path(@list)
 
 = render @list.list_items
 
 = render 'list_items/form'
 
-= link_to "All Lists", lists_path
+

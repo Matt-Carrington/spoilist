@@ -1,5 +1,14 @@
 .welcome
+  = link_to new_user_session_path do
+    %button.full
+      Log in
+  .logo
+    = link_to image_tag( 'logo.svg'), root_path, id: "logo"
   %h1 Spoilist
-  %p Organize your busy life and spoil yourself while you're at it! Spoilist helps you manage your busy schedule and also rewards you for completing your to do's.
+  %p Spoil yourself while organizing your busy life! Spoilist helps you manage your hectic schedule and rewards you for getting stuff done.
+  %br/
   %h2 Sign up
 = render 'form'
+
+.footer
+  &copy; MATT CARRINGTON

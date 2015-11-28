@@ -1,0 +1,21 @@
+.left-menu
+  .row
+    %h2 Menu
+  .row
+    = link_to new_list_path do
+      %h2
+        New List
+  .row
+    = link_to lists_path do
+      %h2
+        New Spoil
+
+.right-content
+  .row-dark
+    %h3 Today
+    %h1= Time.now.strftime("%A %B %d")
+  .category-head
+    %p Your lists
+  .row
+    %h2 list items: closest due date listed first
+  = render 'lists'

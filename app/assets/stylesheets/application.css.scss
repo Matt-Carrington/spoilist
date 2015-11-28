@@ -3,14 +3,68 @@
  */
 
 @import 'normalize';
+@import "zebra-datepicker/default";
 
-
+$darker_gray: #252529;
 $dark_gray: #3D3D44;
 $light_gray: #C0C1C1;
 $mid_gray: #4E4E56;
-$green: #33CD99;
-$purple: #DE99FF;
+$green: #7BCA71;
+$purple: #B3A4FF;
+$blue: #72D2E1;
+$yellow: #FFF096;
+$salmon: #F57D64;
+$red: #F54252;
 
+.row {
+  .list, .title, .item {
+    &.yellow {
+      border-right: 10px solid $yellow;
+      .list-name, a, {
+        color: $yellow;
+      }
+      .item-count {
+        background: $yellow;
+      }
+    }
+    &.salmon {
+      border-right: 10px solid $salmon;
+      .list-name, a {
+        color: $salmon;
+      }
+      .item-count{
+        background: $salmon;
+      }
+    }
+    &.green {
+      border-right: 10px solid $green;
+      .list-name, a {
+        color: $green;
+      }
+      .item-count {
+        background: $green;
+      }
+    }
+    &.purple {
+      border-right: 10px solid $purple;
+      .list-name, a {
+        color: $purple;
+      }
+      .item-count {
+        background: $purple;
+      }
+    }
+    &.blue {
+      border-right: 10px solid $blue;
+      .list-name, a {
+        color: $blue;
+      }
+      .item-count {
+        background: $blue;
+      }
+    }
+  }
+}
 * {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
@@ -35,6 +89,13 @@ h1, h2, h3, h4 {
   font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
   font-weight: 400;
   color: $light_gray;
+  margin: 0 auto;
+  padding: 30px 10px 30px 10px;
+  text-align: center;
+}
+
+p {
+  margin: 0;
 }
 
 .wrapper {
@@ -50,28 +111,61 @@ h1, h2, h3, h4 {
 }
 
 .welcome {
+  width: 100%;
+  margin: 0 auto;
   text-align: center;
   max-width: 600px;
-  padding: 0 10px;
+  padding: 30px 10px;
+}
+
+.logo {
+  width: 100px;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+
+.main-row {
+  .back {
+    float: left;
+    padding: 25px 10px 30px 10px;
+  }
+  i {
+  color: $red;
+  font-size: 35px;
+  }
+}
+
+.category-head {
+  background: $red;
+  text-align: center;
 }
 
 .row {
   border-bottom: 1px solid $mid_gray;
+  display: inline-block;
+  width: 100%;
   .list {
-    border-right: 10px solid $purple;
+    // border-right: 10px solid $purple;
     .list-name {
       padding: 30px 10px 30px 10px;
       font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
       font-weight: 400;
       font-size: 25px;
-      color: $purple;
+      // color: $purple;
+      transition: all .2s ease-in-out;
       &:hover {
         color: $light_gray;
       }
     }
     .item-count {
       float: right;
-      padding: 30px 10px 30px 10px;
+      padding: 10px 15px;
+      position: relative;
+      top: 25px;
+      margin: 0px 20px;
+      // background-color: $purple;
+      color: $dark_gray;
+      border-radius: 50%;
     }
     .trash {
       padding: 30px 10px 30px 10px;
@@ -79,10 +173,10 @@ h1, h2, h3, h4 {
     }
   }
   .title {
-    border-right: 10px solid $purple;
+    // border-right: 10px solid $purple;
     .back {
       float: left;
-      padding: 30px 10px 30px 10px;
+      padding: 25px 10px 30px 10px;
     }
     .list-name {
       margin: 0 auto;
@@ -91,15 +185,21 @@ h1, h2, h3, h4 {
       text-align: center;
       font-weight: 400;
       font-size: 25px;
-      color: $purple;
+      // color: $purple;
     }
     .trash {
       padding: 30px 10px 30px 10px;
       float: right;
+      i {
+        font-size: 25px;
+      }
+    }
+    i {
+    font-size: 35px;
     }
   }
   .item {
-    border-right: 10px solid $purple;
+    // border-right: 10px solid $purple;
     .complete {
       float: left;
       padding: 30px 10px 30px 10px;
@@ -111,6 +211,7 @@ h1, h2, h3, h4 {
     .trash {
       padding: 30px 10px 30px 10px;
       float: right;
+      font-size: 20px;
     }
     .time {
       color: $light_gray;
@@ -119,21 +220,50 @@ h1, h2, h3, h4 {
   } 
 }
 
+.row-dark {
+  background: $darker_gray;
+}
+
+.icon-nav-left {
+  float: left;
+  padding: 30px 10px 30px 10px;
+  i {
+    font-size: 35px;
+  }
+}
+
+.back {
+  float: left;
+  padding: 25px 10px 30px 10px;
+  font-size: 30px;
+}
+
+i {
+  font-size: 30px;
+}
+
 button, .button {
   border: none;
   outline: none;
-  background: $purple;
-  padding: 1rem 3.5rem;
+  background: $red;
+  padding: 1rem 2.5rem;
   text-align: center;
+  color: white;
   a {
     color: white;
     text-decoration: none;
   }
 }
 
+.full {
+  width: 100%;
+  color: white;
+}
+
 a {
-  color: $purple;
+  color: $red;
   text-decoration: none;
+  transition: all .2s ease-in-out;
   &:hover {
     color: $light_gray;
   }
@@ -141,7 +271,7 @@ a {
 
 .button {
   color: white;
-  margin: 2rem 0;
+  // margin: 2rem 0;
 }
 
 .form-inputs {
@@ -172,15 +302,136 @@ input[type="button"] {
 }
 
 input[type="submit"] {
+  transition: all .2s ease-in-out;
   border: none;
   outline: none;
-  background: $purple;
+  background: $red;
   padding: 1rem 3.5rem;
   text-align: center;
   width: 100%;
-  color: $dark_gray;
+  color: white;
 }
+
+.color-theme {
+  height: 50px;
+  padding: 20px 0;
+  margin: 0 auto;
+  text-align: center;
+}
+
+input[type="radio"] {
+  -webkit-appearance: none;
+  background: $light_gray;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  margin: 10px;
+  outline: none;
+  vertical-align: middle;
+}
+.purple-radio {
+  display: inline-block;
+  input[type="radio"] {
+    transition: all .2s ease-in-out;
+    -webkit-appearance: none;
+    background: $purple;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    margin: 10px;
+    outline: none;
+    vertical-align: middle;
+  }
+}
+
+.blue-radio {
+  display: inline-block;
+  input[type="radio"] {
+    transition: all .2s ease-in-out;
+    -webkit-appearance: none;
+    background: $blue;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    margin: 10px;
+    outline: none;
+    vertical-align: middle;
+  }
+}
+.green-radio {
+  display: inline-block;
+  input[type="radio"] {
+    transition: all .2s ease-in-out;
+    -webkit-appearance: none;
+    background: $green;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    margin: 10px;
+    outline: none;
+    vertical-align: middle;
+  }
+}
+.salmon-radio {
+  display: inline-block;
+  input[type="radio"] {
+    transition: all .2s ease-in-out;
+    -webkit-appearance: none;
+    background: $salmon;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    margin: 10px;
+    outline: none;
+    vertical-align: middle;
+  }
+}
+.yellow-radio {
+  display: inline-block;
+  input[type="radio"] {
+    transition: all .2s ease-in-out;
+    -webkit-appearance: none;
+    background: $yellow;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    margin: 10px;
+    outline: none;
+    vertical-align: middle;
+  }
+}
+
+
+input[type="radio"]:checked {
+  height: 35px;
+  width: 35px;
+}
+
+
+
+
+
 
 textarea {
   min-height: 200px;
+}
+
+.footer {
+  padding: 50px;
+  text-align: center;
+}
+
+.right-content {
+  width: 600px;
+  float: left;
+}
+
+.left-menu {
+  width: 300px;
+  float: left;
+}
+
+.left {
+  float: left;
+  margin: 15px;
 }

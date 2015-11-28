@@ -13,10 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require best_in_place
-//= require turbolinks
 //= require_tree .
+//= require zebra-datepicker/core
 
 $(document).ready(function() {
   /* Activating Best In Place */
-  jQuery(".best_in_place").best_in_place();
+  $('#list_item_due_date').Zebra_DatePicker();
+
 });

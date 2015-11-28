@@ -37,11 +37,6 @@ class ListsController < ApplicationController
     end
   end
 
-  # def destroy
-  #   @list.destroy
-  #   redirect_to lists_path
-  # end
-
   def destroy
     @list.destroy
     respond_to do |format|
@@ -50,15 +45,11 @@ class ListsController < ApplicationController
     end
   end
 
-  def count
-    
-  end
-
   private
 
   def find_list
     @list = List.find(params[:id])
-
+    @theme = @list.color
   end
 
   def list_params

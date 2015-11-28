@@ -1,0 +1,31 @@
+/ .welcome
+/   .icon-nav-left
+/     = link_to root_path do
+/       %i.fa.fa-angle-left
+/   %h2 Log in
+/ = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+/   .form-inputs
+/     = f.text_field :username, required: false, placeholder: "Username"
+/     %br/
+/     %br/
+/     = f.password_field :password, required: false, placeholder: "Password"
+/     %br/
+/     %br/
+/   .form-actions
+/     = f.button :submit, "Log in"
+
+.welcome
+  .icon-nav-left
+    = link_to root_path do
+      %i.fa.fa-angle-left
+  %h2 Log in
+= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  .form-inputs
+    = f.input :email, required: false, label: false, placeholder: "Email"
+    %br/
+    %br/
+    = f.input :password, required: false, label: false, placeholder: "Password"
+    %br/
+    %br/
+  .form-actions
+    = f.button :submit, "Log in"

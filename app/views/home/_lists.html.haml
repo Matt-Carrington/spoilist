@@ -7,13 +7,3 @@
           / = link_to 'Delete', list, method: :delete, data: { confirm: "Are you sure?" }
         .list-name
           = list.title
-%br/
-
-= link_to new_list_path do
-  %button.full
-    New list
-
-%br/
-= link_to "Sign Out", destroy_user_session_path, method: :delete
-%br/
-= link_to "Home", home_index_path

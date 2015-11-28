@@ -21,6 +21,15 @@
     redirect_to @list, notice: "Completed!"
   end
 
+  # def due_date
+  #   @due_date = @list_item.due_date
+  # end
+
+  # def complete
+  #   @list_item.toggle_completion!
+  #   redirect_to @list
+  # end
+
   private
 
   def set_list
@@ -32,6 +41,6 @@
   end
 
   def list_item_params
-    params[:list_item].permit(:content, :color, :point_value, :list_id)
+    params[:list_item].permit(:content, :color, :point_value, :list_id, :due_date)
   end
 end

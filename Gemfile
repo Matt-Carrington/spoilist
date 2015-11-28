@@ -27,6 +27,7 @@ gem 'haml', '~> 4.0', '>= 4.0.7'
 gem 'simple_form', '~> 3.2'
 gem 'devise', '~> 3.5', '>= 3.5.2'
 gem 'best_in_place', '~> 3.0', '>= 3.0.3'
+gem 'zebra-datepicker-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

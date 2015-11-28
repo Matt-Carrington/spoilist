@@ -1,0 +1,25 @@
+- @list_items.each do |list_item|
+  .row
+    %div{class: "item #{@list_theme}"}
+      .complete
+        = link_to complete_list_list_item_path(@lists, list_item.id), method: :patch do
+          %i.fa.fa-circle-o
+      .trash
+        = link_to list_list_item_path(@lists, list_item.id), method: :delete, data: { confirm: "Delete?" } do
+          %i.fa.fa-trash-o
+      .list-item
+        / - if list_item.toggle_completion!
+        -if list_item.completed?
+          %strike{ style: "opacity: 0.4;" }= list_item.content
+          %br/
+          .time
+            Completed
+            = time_ago_in_words(list_item.completed_at)
+            ago
+        - else
+          = list_item.content
+          %br/
+          .time
+            Created
+            = time_ago_in_words(list_item.created_at)
+            ago

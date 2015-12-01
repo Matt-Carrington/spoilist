@@ -28,6 +28,9 @@ gem 'devise', '~> 3.5', '>= 3.5.2'
 gem 'best_in_place', '~> 3.0', '>= 3.0.3'
 gem 'zebra-datepicker-rails'
 
+# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+gem 'spring'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -52,13 +55,6 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
-end
-
-group :production do
-  gem 'pg'
 end
 
 

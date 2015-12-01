@@ -26,7 +26,11 @@ Rails.application.routes.draw do
 
   get 'welcome/index'
 
-  resources :spoils
+  resources :spoils do
+    member do
+      patch :complete
+    end
+  end
 
   resources :lists do
     resources :list_items do

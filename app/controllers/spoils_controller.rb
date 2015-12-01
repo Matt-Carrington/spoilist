@@ -16,6 +16,20 @@ class SpoilsController < ApplicationController
   def edit
   end
 
+  def complete
+    @user_points = current_user.points
+    @spoil_value = @spoil.point_value
+    if @user_points >= @spoil_value
+      @spoil.update_attribute(:completed_at, Time.now)
+      @user_points = current_user.points - @spoil_value
+      current_user.update_attribute(:points, @user_points )
+      redirect_to spoils_path
+      @spoil.destroy
+    else
+      redirect_to spoil_path, notice: "You don't have enough points for this :("
+    end
+  end
+
   def create
     @spoil = current_user.spoils.build(spoil_params)
 
@@ -32,7 +46,7 @@ class SpoilsController < ApplicationController
   def destroy
     @spoil.destroy
     respond_to do |format|
-      format.html { redirect_to spoils_path, notice: 'Todo list was successfully destroyed.' }
+      format.html { redirect_to spoils_path }
       format.json { head :no_content }
     end
   end

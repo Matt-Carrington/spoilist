@@ -30,11 +30,16 @@
       <div class="category-head">
         Your lists
       </div>
-
+    <% unless @lists.blank? %>
       <div>
         <%= render 'lists' %>
       </div>
-      
+    <% else %>
+      <br>
+      <br>
+      <h2>It looks like you don't have any lists.</h2>
+      <h3>Click on the menu button and earn some points!</h3>
+    <% end %>
     </div><!-- /o-container -->
   </main><!-- /o-content -->
 

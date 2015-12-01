@@ -1,5 +1,5 @@
 class SpoilsController < ApplicationController
-  before_action :set_spoil
+  # before_action :set_spoil
 
   def index
     @spoils = Spoil.where(user_id: current_user)
@@ -17,6 +17,7 @@ class SpoilsController < ApplicationController
   end
 
   def complete
+    @spoil = Spoil.find(params[:id])
     @user_points = current_user.points
     @spoil_value = @spoil.point_value
     if @user_points >= @spoil_value
@@ -54,7 +55,7 @@ class SpoilsController < ApplicationController
   private
 
   def set_spoil
-    @spoil = Spoil.find_by(params[:id])
+    @spoil = Spoil.find(params[:id])
   end
 
   def spoil_params

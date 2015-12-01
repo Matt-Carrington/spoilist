@@ -1,0 +1,99 @@
+<div id="o-wrapper" class="o-wrapper">
+
+  <header class="o-header row-dark">
+    <div class="c-buttons">
+      <button id="c-button--push-left" class="c-button left">Menu</button>
+      <%= link_to destroy_user_session_path, method: :delete do %>
+        <button id="c-button--push-left" class="c-button right">Log out</button>
+      <% end %>
+       <h4 class"center">
+        Hello <%= current_user.username %>
+      </h4>
+    </div>
+    
+  </header><!-- /o-header -->
+
+  <main class="o-content row-dark clear">
+    <div class="o-container">
+      
+      <div class="o-container">
+        <h3 class="o-header__title">Today</h3>
+        <h1><%= Time.now.strftime("%A %B %d") %></h1>
+      </div>
+      
+    </div><!-- /o-container -->
+  </main><!-- /o-content -->
+
+  <main class="o-content">
+    <div class="o-container">
+      
+      <div class="category-head">
+        Your lists
+      </div>
+
+      <div>
+        <%= render 'lists' %>
+      </div>
+      
+    </div><!-- /o-container -->
+  </main><!-- /o-content -->
+
+
+
+</div><!-- /o-wrapper -->
+
+<nav id="c-menu--push-left" class="c-menu c-menu--push-left">
+  <div class="menu-head">
+    <div class="points">
+      <span class="small-points">
+        Points
+      </span>
+      <br>
+      <%= current_user.points %>
+    </div>
+    <h3 class="">
+      Menu
+    </h3>
+    <button class="c-menu__close ib-align-right"><i class="fa fa-times"></i></button>
+  </div>
+  
+  <ul class="c-menu__items">
+    <%= link_to new_list_path do %>
+      <li class="c-menu__item"><h2>New List</h2></li>
+    <% end %>
+    <%= link_to new_spoil_path do %>
+      <li class="c-menu__item"><h2>New Spoil</h2></li>
+    <% end %>
+  </ul>
+  <%= link_to spoils_path do %>
+    <button class="full">View all spoils</button>
+  <% end %>
+</nav><!-- /c-menu push-left -->
+
+
+
+<div id="c-mask" class="c-mask"></div><!-- /c-mask -->
+
+<!-- menus script -->
+<script>
+  
+
+  /**
+   * Push left instantiation and action.
+   */
+  var pushLeft = new Menu({
+    wrapper: '#o-wrapper',
+    type: 'push-left',
+    menuOpenerClass: '.c-button',
+    maskId: '#c-mask'
+  });
+
+  var pushLeftBtn = document.querySelector('#c-button--push-left');
+  
+  pushLeftBtn.addEventListener('click', function(e) {
+    e.preventDefault;
+    pushLeft.open();
+  });
+
+</script>
+

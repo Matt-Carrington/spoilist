@@ -13,7 +13,7 @@
 .Zebra_DatePicker *:after,
 .Zebra_DatePicker *:before  { -moz-box-sizing: content-box !important; -webkit-box-sizing: content-box !important; box-sizing: content-box !important }
 
-.Zebra_DatePicker           { position: absolute; background: #666; border: 3px solid #666; z-index: 1200; font-family: Tahoma, Arial, Helvetica, sans-serif; font-size: 13px; top: 0 }
+.Zebra_DatePicker           { position: absolute; background: #666; border: 3px solid #666; z-index: 1200; font-family: Tahoma, Arial, Helvetica, sans-serif; font-size: 13px; top: 0; left: 0; bottom: 0; right: 0; }
 
 .Zebra_DatePicker *         { margin: 0; padding: 0; color: #000; background: transparent; border: none }
 
@@ -33,7 +33,7 @@
 .Zebra_DatePicker .dp_daypicker td,
 .Zebra_DatePicker .dp_daypicker th,
 .Zebra_DatePicker .dp_monthpicker td,
-.Zebra_DatePicker .dp_yearpicker td         { background: #E8E8E8; width: 30px; border: 1px solid #7BACD2 }
+.Zebra_DatePicker .dp_yearpicker td         { background: #E8E8E8; width: 50px; border: 1px solid #7BACD2 }
 
 .Zebra_DatePicker,
 .Zebra_DatePicker .dp_header .dp_hover,
@@ -100,3 +100,5 @@ button.Zebra_DatePicker_Icon_Disabled       { background-image: url('calendar-di
 /* don't set vertical margins! */
 button.Zebra_DatePicker_Icon                { margin: 0 0 0 3px }
 button.Zebra_DatePicker_Icon_Inside         { margin: 0 3px 0 0 }
+
+

@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="title">
+    <div class="back">
+      <%= link_to spoils_path do %>
+        <i class="fa fa-angle-left"></i>
+      <% end %>
+    </div>
+    <!-- <div class="trash">
+      <%= link_to @spoil, method: :delete, data: { confirm: "Delete?" } do %>
+        <i class="fa fa-trash-o"></i>
+      <% end %>
+    </div> -->
+    <div class="spoil-points">
+      <%= @spoil.point_value %>
+    </div>
+    <div class="spoil-trash">Points needed: </div>
+    <div class="list-name">
+      <%= @spoil.content %>
+    </div>
+  </div>
+</div>

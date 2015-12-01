@@ -18,6 +18,9 @@
 
   def complete
     @list_item.update_attribute(:completed_at, Time.now)
+    @list_item.update_attribute(:point_value, 1)
+    @user_points = current_user.points + 1
+    current_user.update_attribute(:points, @user_points )
     redirect_to @list, notice: "Completed!"
   end
 

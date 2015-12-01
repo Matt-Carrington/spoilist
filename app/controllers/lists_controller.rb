@@ -40,7 +40,7 @@ class ListsController < ApplicationController
   def destroy
     @list.destroy
     respond_to do |format|
-      format.html { redirect_to root_url, notice: 'Todo list was successfully destroyed.' }
+      format.html { redirect_to home_index_path, notice: 'Todo list was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

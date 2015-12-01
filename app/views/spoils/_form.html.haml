@@ -1,0 +1,7 @@
+= simple_form_for @spoil do |f|
+  = f.text_field :content, placeholder: " Title"
+  %br/
+  %br/
+  = f.input :point_value, label: false, placeholder: 'Enter points'
+  %br/
+  = f.button :submit, "Create spoil" 

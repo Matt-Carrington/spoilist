@@ -1,5 +1,19 @@
 Rails.application.routes.draw do
   
+  # get 'spoils/index'
+
+  # get 'spoils/show'
+
+  # get 'spoils/new'
+
+  # get 'spoils/edit'
+
+  # get 'spoils/create'
+
+  # get 'spoils/update'
+
+  # get 'spoils/destroy'
+
   get 'home/index'
 
   devise_for :users
@@ -12,6 +26,8 @@ Rails.application.routes.draw do
 
   get 'welcome/index'
 
+  resources :spoils
+
   resources :lists do
     resources :list_items do
       member do
@@ -21,7 +37,7 @@ Rails.application.routes.draw do
   end
 
   authenticated :user do
-    root "lists#index", as: "authenticated_root"
+    root "home#index", as: "authenticated_root"
   end
 
   root 'welcome#index'

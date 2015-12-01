@@ -1,0 +1,16 @@
+<!-- .main-row
+  .back
+    = link_to home_index_path do
+      %i.fa.fa-angle-left
+  %h1 New list
+  = render 'form' -->
+
+<div class="main-row">
+  <div class="back">
+    <%= link_to home_index_path do %>
+      <i class="fa fa-angle-left"></i>
+    <% end %>
+  </div>
+  <h1>New spoil</h1>
+  <%= render 'form' %>
+</div>

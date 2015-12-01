@@ -1,25 +1,56 @@
+/ .row
+/   %div{class: "item #{@theme}"}
+/     .complete
+/       = link_to complete_list_list_item_path(@list, list_item.id), method: :patch do
+/         %i.fa.fa-circle-o
+/     .trash
+/       = link_to list_list_item_path(@list, list_item.id), method: :delete, data: { confirm: "Delete?" } do
+/         %i.fa.fa-trash-o
+/     .list-item
+/       / - if list_item.toggle_completion!
+/       - if list_item.completed?
+/         %strike{ style: "opacity: 0.4;" }= list_item.content
+/         %br/
+/         .time
+/           Completed
+/           = time_ago_in_words(list_item.completed_at)
+/           ago
+/       - else
+/         = list_item.content
+/         %br/
+/         .time
+/           Created
+/           = time_ago_in_words(list_item.created_at)
+/           ago
+    
 .row
-  %div{class: "item #{@theme}"}
-    .complete
-      = link_to complete_list_list_item_path(@list, list_item.id), method: :patch do
-        %i.fa.fa-circle-o
-    .trash
-      = link_to list_list_item_path(@list, list_item.id), method: :delete, data: { confirm: "Delete?" } do
-        %i.fa.fa-trash-o
-    .list-item
-      / - if list_item.toggle_completion!
-      -if list_item.completed?
+  -if list_item.completed?
+    %div{class: "item #{@theme}"}
+      .complete
+        %i.fa.fa-check
+      .trash
+        = link_to list_list_item_path(@list, list_item.id), method: :delete, data: { confirm: "Delete?" } do
+          %i.fa.fa-trash-o
+      .list-item
         %strike{ style: "opacity: 0.4;" }= list_item.content
         %br/
         .time
           Completed
           = time_ago_in_words(list_item.completed_at)
           ago
-      - else
+  - else
+    %div{class: "item #{@theme}"}
+      .complete
+        = link_to complete_list_list_item_path(@list, list_item.id), method: :patch do
+          %i.fa.fa-circle-o
+      .trash
+        = link_to list_list_item_path(@list, list_item.id), method: :delete, data: { confirm: "Delete?" } do
+          %i.fa.fa-trash-o
+      .list-item
         = list_item.content
         %br/
         .time
           Created
           = time_ago_in_words(list_item.created_at)
           ago
-    
+      

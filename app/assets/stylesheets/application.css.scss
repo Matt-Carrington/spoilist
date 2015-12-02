@@ -117,7 +117,7 @@ p {
   width: 100%;
   margin: 0 auto;
   text-align: center;
-  max-width: 600px;
+  max-width: 900px;
   padding: 30px 10px;
 }
 
@@ -324,12 +324,6 @@ input[type="number"], input[type="text"], input[type="email"], input[type="passw
 input[type="text"], input[type="email"], input[type="password"] {
   height: 40px;
   width: 100%;
-}
-
-input[type="text"] {
-  background: $mid_gray;
-  text-decoration: none;
-  border: none;
 }
 
 input[type="button"] {
@@ -1067,7 +1061,7 @@ button.Zebra_DatePicker_Icon {
   position: absolute;
   width: 16px;
   height: 16px;
-  background: url(/assets/zebra-datepicker/calendar-6672f56f6074e8ba27d77ed75bfadfe1b61dfc6f6b6f32e3edc52c26d72e9db3.png) no-repeat left top;
+  background: none;
   text-indent: -9000px;
   border: none;
   cursor: pointer;
@@ -1084,4 +1078,9 @@ button.Zebra_DatePicker_Icon {
 }
 button.Zebra_DatePicker_Icon_Inside {
   margin: 0 3px 0 0;
+}
+
+.Zebra_DatePicker_Icon_Wrapper {
+  width: 100%;
+  cursor: pointer;
 }

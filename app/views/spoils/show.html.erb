@@ -5,11 +5,11 @@
         <i class="fa fa-angle-left"></i>
       <% end %>
     </div>
-    <!-- <div class="trash">
-      <%= link_to @spoil, method: :delete, data: { confirm: "Delete?" } do %>
+    <div class="trash">
+      <%= link_to spoil_path(@spoil), method: :delete, data: { confirm: "Delete?" } do %>
         <i class="fa fa-trash-o"></i>
       <% end %>
-    </div> -->
+    </div>
     <div class="spoil-points">
       <%= @spoil.point_value %>
     </div>

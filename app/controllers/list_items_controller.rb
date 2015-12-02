@@ -8,11 +8,7 @@
   end
 
   def destroy
-    if @list_item.destroy
-      flash[:success] = "List item was deleted."
-    else
-      flash[:error] = "List item was not able to be deleted."
-    end
+    @list_item.destroy
     redirect_to @list
   end
 

@@ -8,22 +8,19 @@
 </div>
 
 <% @spoils.each do |spoil| %>
+  <%= link_to spoil do %>
     <div class="row">
       <div class="title">
-        <div class="trash">
-          <%= link_to @spoil, method: :delete, data: { confirm: "Delete?" } do %>
-            <i class="fa fa-trash-o"></i>
-          <% end %>
-        </div>
         <div class="spoil-points">
           <%= spoil.point_value %>
         </div>
         <div class="spoil-trash">Points needed: </div>
         <div class="spoil-name">
-          <%= link_to spoil.content, spoil %>
+          <%= spoil.content %>
         </div>
       </div>    
     </div>
+  <% end %>
 <% end %>
 
 

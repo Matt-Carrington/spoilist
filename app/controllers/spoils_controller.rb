@@ -45,6 +45,7 @@ class SpoilsController < ApplicationController
   end
 
   def destroy
+    @spoil = Spoil.find(params[:id])    
     @spoil.destroy
     respond_to do |format|
       format.html { redirect_to spoils_path }
